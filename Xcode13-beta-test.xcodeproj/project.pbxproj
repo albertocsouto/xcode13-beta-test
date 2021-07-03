@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2907C3FB26908B6900FF1FA0 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907C3FA26908B6900FF1FA0 /* SignUpService.swift */; };
 		29827CE1268F2DB800E5AA1B /* Xcode13_beta_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29827CE0268F2DB800E5AA1B /* Xcode13_beta_testApp.swift */; };
-		29827CE3268F2DB800E5AA1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29827CE2268F2DB800E5AA1B /* ContentView.swift */; };
+		29827CE3268F2DB800E5AA1B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29827CE2268F2DB800E5AA1B /* WelcomeView.swift */; };
 		29827CE5268F2DB900E5AA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29827CE4268F2DB900E5AA1B /* Assets.xcassets */; };
 		29827CE8268F2DB900E5AA1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29827CE7268F2DB900E5AA1B /* Preview Assets.xcassets */; };
 		29827CF2268F2DBA00E5AA1B /* Xcode13_beta_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29827CF1268F2DBA00E5AA1B /* Xcode13_beta_testTests.swift */; };
 		29827CFC268F2DBA00E5AA1B /* Xcode13_beta_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29827CFB268F2DBA00E5AA1B /* Xcode13_beta_testUITests.swift */; };
+		29A0711E268F70DA00DC18BA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0711D268F70DA00DC18BA /* RegisterView.swift */; };
+		29A07123268F774500DC18BA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07122268F774500DC18BA /* SignUp.swift */; };
+		29A07125268F976900DC18BA /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07124268F976900DC18BA /* RegisterViewModel.swift */; };
+		29D8C5F326906D6900B595BE /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C5F226906D6900B595BE /* WelcomeViewModel.swift */; };
+		29D8C5F6269076A100B595BE /* FormStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8C5F5269076A100B595BE /* FormStyle.swift */; };
+		29F924C026910B76006ECE31 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924BF26910B76006ECE31 /* LoginView.swift */; };
+		29F924C226910BD2006ECE31 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924C126910BD2006ECE31 /* LoginViewModel.swift */; };
+		29F924C426910BFB006ECE31 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924C326910BFB006ECE31 /* SignInService.swift */; };
+		29F924C626910C84006ECE31 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924C526910C84006ECE31 /* SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +43,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2907C3FA26908B6900FF1FA0 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		2907C3FC2690BAC700FF1FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29827CDD268F2DB800E5AA1B /* Xcode13-beta-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode13-beta-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29827CE0268F2DB800E5AA1B /* Xcode13_beta_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode13_beta_testApp.swift; sourceTree = "<group>"; };
-		29827CE2268F2DB800E5AA1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29827CE2268F2DB800E5AA1B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		29827CE4268F2DB900E5AA1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29827CE7268F2DB900E5AA1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29827CED268F2DBA00E5AA1B /* Xcode13-beta-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xcode13-beta-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29827CF1268F2DBA00E5AA1B /* Xcode13_beta_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode13_beta_testTests.swift; sourceTree = "<group>"; };
 		29827CF7268F2DBA00E5AA1B /* Xcode13-beta-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xcode13-beta-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29827CFB268F2DBA00E5AA1B /* Xcode13_beta_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode13_beta_testUITests.swift; sourceTree = "<group>"; };
+		29A0711D268F70DA00DC18BA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		29A07122268F774500DC18BA /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		29A07124268F976900DC18BA /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		29D8C5F226906D6900B595BE /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		29D8C5F5269076A100B595BE /* FormStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStyle.swift; sourceTree = "<group>"; };
+		29F924BF26910B76006ECE31 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		29F924C126910BD2006ECE31 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		29F924C326910BFB006ECE31 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		29F924C526910C84006ECE31 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +90,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2907C3F826908B3900FF1FA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29D8C5F42690754000B595BE /* Styles */,
+				29A0711C268F70AE00DC18BA /* User */,
+				29D8C5EF2690654600B595BE /* Welcome */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2907C3F926908B4C00FF1FA0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				29A07121268F772000DC18BA /* Model */,
+				29F924C726910DE6006ECE31 /* Service */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		29827CD4268F2DB800E5AA1B = {
 			isa = PBXGroup;
 			children = (
@@ -92,10 +132,12 @@
 		29827CDF268F2DB800E5AA1B /* Xcode13-beta-test */ = {
 			isa = PBXGroup;
 			children = (
-				29827CE0268F2DB800E5AA1B /* Xcode13_beta_testApp.swift */,
-				29827CE2268F2DB800E5AA1B /* ContentView.swift */,
+				2907C3FC2690BAC700FF1FA0 /* Info.plist */,
+				2907C3F926908B4C00FF1FA0 /* API */,
+				2907C3F826908B3900FF1FA0 /* View */,
 				29827CE4268F2DB900E5AA1B /* Assets.xcassets */,
 				29827CE6268F2DB900E5AA1B /* Preview Content */,
+				29827CE0268F2DB800E5AA1B /* Xcode13_beta_testApp.swift */,
 			);
 			path = "Xcode13-beta-test";
 			sourceTree = "<group>";
@@ -122,6 +164,84 @@
 				29827CFB268F2DBA00E5AA1B /* Xcode13_beta_testUITests.swift */,
 			);
 			path = "Xcode13-beta-testUITests";
+			sourceTree = "<group>";
+		};
+		29A0711C268F70AE00DC18BA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				29A0711F268F736D00DC18BA /* View */,
+				29A07120268F737300DC18BA /* ViewModel */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		29A0711F268F736D00DC18BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29A0711D268F70DA00DC18BA /* RegisterView.swift */,
+				29F924BF26910B76006ECE31 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29A07120268F737300DC18BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				29A07124268F976900DC18BA /* RegisterViewModel.swift */,
+				29F924C126910BD2006ECE31 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29A07121268F772000DC18BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29F924C526910C84006ECE31 /* SignIn.swift */,
+				29A07122268F774500DC18BA /* SignUp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		29D8C5EF2690654600B595BE /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				29D8C5F12690655C00B595BE /* View */,
+				29D8C5F02690655100B595BE /* ViewModel */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		29D8C5F02690655100B595BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				29D8C5F226906D6900B595BE /* WelcomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29D8C5F12690655C00B595BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29827CE2268F2DB800E5AA1B /* WelcomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29D8C5F42690754000B595BE /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				29D8C5F5269076A100B595BE /* FormStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		29F924C726910DE6006ECE31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2907C3FA26908B6900FF1FA0 /* SignUpService.swift */,
+				29F924C326910BFB006ECE31 /* SignInService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29827CE3268F2DB800E5AA1B /* ContentView.swift in Sources */,
+				29F924C426910BFB006ECE31 /* SignInService.swift in Sources */,
+				29D8C5F6269076A100B595BE /* FormStyle.swift in Sources */,
+				29A07123268F774500DC18BA /* SignUp.swift in Sources */,
+				29D8C5F326906D6900B595BE /* WelcomeViewModel.swift in Sources */,
+				29F924C026910B76006ECE31 /* LoginView.swift in Sources */,
+				29A07125268F976900DC18BA /* RegisterViewModel.swift in Sources */,
+				29A0711E268F70DA00DC18BA /* RegisterView.swift in Sources */,
+				29F924C626910C84006ECE31 /* SignIn.swift in Sources */,
+				2907C3FB26908B6900FF1FA0 /* SignUpService.swift in Sources */,
+				29827CE3268F2DB800E5AA1B /* WelcomeView.swift in Sources */,
+				29F924C226910BD2006ECE31 /* LoginViewModel.swift in Sources */,
 				29827CE1268F2DB800E5AA1B /* Xcode13_beta_testApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,12 +548,16 @@
 				DEVELOPMENT_TEAM = BNHT7N597L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Xcode13-beta-test/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "Xcode13-beta-test";
+				INFOPLIST_KEY_CFBundleName = "Xcode13-beta-test";
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,12 +582,16 @@
 				DEVELOPMENT_TEAM = BNHT7N597L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Xcode13-beta-test/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "Xcode13-beta-test";
+				INFOPLIST_KEY_CFBundleName = "Xcode13-beta-test";
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

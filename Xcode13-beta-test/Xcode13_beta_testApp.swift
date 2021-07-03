@@ -11,7 +11,7 @@ import SwiftUI
 struct Xcode13_beta_testApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView(viewModel: WelcomeViewModel())
         }
     }
 }
