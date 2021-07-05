@@ -12,10 +12,10 @@ struct SignUpService {
     let session = URLSession.shared
 
     // Sample:
-    // curl -vvv  -X  POST http://localhost:4000/api/users/signup -H "Content-Type: application/json" -d '{"user": {"email": "users11084d@business.com", "password": "1234568"}}'
+    // curl -vvv  -X  POST http://localhost:4000/api/user/signup -H "Content-Type: application/json" -d '{"user": {"email": "users11084d@business.com", "password": "1234568"}}'
 
     func signUp(data: SignUp) async throws -> URLResponse {
-        let url = URL(string: "http://localhost:4000/api/users/signup")!
+        let url = URL(string: "http://localhost:4000/api/user/signup")!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")

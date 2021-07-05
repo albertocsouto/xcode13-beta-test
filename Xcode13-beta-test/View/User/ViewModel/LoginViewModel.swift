@@ -14,7 +14,7 @@ class LoginViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var result: String = ""
 
-    func login() async throws {
+    func signIn() async throws {
         let signInService = SignInService()
         let signIn = SignIn(email: email, password: password)
         let response = try await signInService.signIn(data: signIn)

@@ -32,7 +32,7 @@ struct LoginView: View {
                     .padding()
                 Button("Login") {
                     async {
-                        try? await viewModel.login()
+                        try? await viewModel.signIn()
                     }
                 }.padding()
                     .buttonStyle(BorderedButtonStyle())

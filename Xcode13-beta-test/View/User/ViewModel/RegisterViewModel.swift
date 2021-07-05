@@ -16,7 +16,7 @@ class RegisterViewModel: ObservableObject {
     @Published var lastname: String = ""
     @Published var result: String = ""
 
-    func register() async throws {
+    func signUp() async throws {
         let signUpService = SignUpService()
         let signUpContent = SignUpContent(name: name, lastname: lastname, email: email, password: password)
         let signUp = SignUp(user: signUpContent)
