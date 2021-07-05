@@ -16,8 +16,7 @@ class LoginViewModel: ObservableObject {
 
     func login() async throws {
         let signInService = SignInService()
-        let signInContent = SignInContent(email: email, password: password)
-        let signIn = SignIn(user: signInContent)
+        let signIn = SignIn(email: email, password: password)
         let response = try await signInService.signIn(data: signIn)
         if let httpResponse = response as? HTTPURLResponse {
             if httpResponse.statusCode == 201 {

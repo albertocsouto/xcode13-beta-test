@@ -8,10 +8,6 @@
 import Foundation
 
 struct SignIn: Codable {
-    var user: SignInContent
-}
-
-struct SignInContent: Codable {
     var email: String
     var password: String
 }
