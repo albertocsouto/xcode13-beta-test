@@ -31,7 +31,7 @@ struct WelcomeView: View {
     }
 
     private func createShowRegisterNavigationLink() -> NavigationLink<EmptyView, RegisterView> {
-        let registerView = RegisterView(viewModel: RegisterViewModel())
+        let registerView = RegisterView(viewModel: RegisterViewModel(service: APIServiceImpl(environment: .develop)))
         return NavigationLink(destination: registerView,
                               isActive:$viewModel.isShowingRegisterView) {
             EmptyView()
@@ -39,7 +39,7 @@ struct WelcomeView: View {
     }
 
     private func createShowLoginNavigationLink() -> NavigationLink<EmptyView, LoginView> {
-        let loginView = LoginView(viewModel: LoginViewModel())
+        let loginView = LoginView(viewModel: LoginViewModel(service: APIServiceImpl(environment: .develop)))
         return NavigationLink(destination: loginView,
                               isActive:$viewModel.isShowingLoginView) {
             EmptyView()

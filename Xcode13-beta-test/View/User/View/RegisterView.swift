@@ -50,6 +50,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: RegisterViewModel())
+        RegisterView(viewModel: RegisterViewModel(service: APIServiceImpl(environment: .develop)))
     }
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 class RegisterViewModel: ObservableObject {
     @Published var email: String = ""
@@ -16,17 +15,18 @@ class RegisterViewModel: ObservableObject {
     @Published var lastname: String = ""
     @Published var result: String = ""
 
+    let service: APIService
+
+    required init(service: APIService) {
+        self.service = service
+    }
+
     func signUp() async throws {
-        let signUpService = SignUpService()
         let signUpContent = SignUpContent(name: name, lastname: lastname, email: email, password: password)
         let signUp = SignUp(user: signUpContent)
-        let response = try await signUpService.signUp(data: signUp)
-        if let httpResponse = response as? HTTPURLResponse {
-            if httpResponse.statusCode == 201 {
-                result = "OK!"
-            } else {
-                result = "Failed!"
-            }
+        let response = try await service.signUp(data: signUp)
+        if response.statusCode == 201 {
+            result = "OK!"
         } else {
             result = "Failed!"
         }

@@ -7,23 +7,23 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var result: String = ""
 
+    let service: APIService
+
+    required init(service: APIService) {
+        self.service = service
+    }
+
     func signIn() async throws {
-        let signInService = SignInService()
         let signIn = SignIn(email: email, password: password)
-        let response = try await signInService.signIn(data: signIn)
-        if let httpResponse = response as? HTTPURLResponse {
-            if httpResponse.statusCode == 201 {
-                result = "OK!"
-            } else {
-                result = "Failed!"
-            }
+        let response = try await service.signIn(data: signIn)
+        if response.statusCode == 201 {
+            result = "OK!"
         } else {
             result = "Failed!"
         }
