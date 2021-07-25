@@ -44,6 +44,29 @@ class APIServiceImpl: APIService {
         return try await fetchPOST(path: "user/signin", body: signIn)
     }
 
+    func game(season: Int, match: Int) async throws -> Result<Quiniela, Error> {
+        var queryItems = [URLQueryItem]()
+        queryItems.append(URLQueryItem(name: "season", value: String(season)))
+        queryItems.append(URLQueryItem(name: "game_number", value: String(match)))
+        let (data, _) = try await fetchGET(path: "game/quiniela", queryItems: queryItems)
+        let stringData = String(data: data, encoding: .utf8)
+        print(stringData!)
+        let result = Result { try JSONDecoder().decode(Quiniela.self, from: data) }
+        return result
+    }
+
+    private func fetchGET(path: String, queryItems: [URLQueryItem]?) async throws -> (Data, HTTPURLResponse) {
+        let url = URL(string: path, relativeTo: baseURL)!
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = queryItems
+        let urlWithQueryItems = urlComponents?.url
+        var urlRequest = URLRequest(url: urlWithQueryItems!)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let (data, response) = try await session.data(for: urlRequest, delegate: nil)
+        return (data, response as! HTTPURLResponse)
+    }
+
     private func fetchPOST(path: String, body: Data) async throws -> HTTPURLResponse {
         let url = URL(string: path, relativeTo: baseURL)!
         var urlRequest = URLRequest(url: url)

@@ -11,4 +11,5 @@ import Combine
 class WelcomeViewModel: ObservableObject {
     @Published var isShowingRegisterView: Bool = false
     @Published var isShowingLoginView: Bool = false
+    @Published var isShowingQuinielaView: Bool = false
 }

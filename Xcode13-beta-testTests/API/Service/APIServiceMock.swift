@@ -32,6 +32,16 @@ class APIServiceMock: APIService {
         }
         return response
     }
+
+    func game(season: Int, match: Int) async throws -> Result<Quiniela, Error> {
+        if season == 2021 && match == 1 {
+            return .success(Quiniela())
+        } else {
+            let error = NSError(domain: "mock", code: 404, userInfo: nil)
+            return .failure(error)
+        }
+
+    }
 }
 
 private extension SignUp {

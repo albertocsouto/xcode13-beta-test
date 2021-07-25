@@ -26,6 +26,10 @@ struct WelcomeView: View {
                 Button("Tap to show login") {
                     viewModel.isShowingLoginView = true
                 }.padding()
+                Button("Tap to show quiniela") {
+                    viewModel.isShowingQuinielaView = true
+                }
+                createShowQuinielaNavigationLink()
             }
         }.navigationTitle("Welcome")
     }
@@ -42,6 +46,14 @@ struct WelcomeView: View {
         let loginView = LoginView(viewModel: LoginViewModel(service: APIServiceImpl(environment: .develop)))
         return NavigationLink(destination: loginView,
                               isActive:$viewModel.isShowingLoginView) {
+            EmptyView()
+        }
+    }
+
+    private func createShowQuinielaNavigationLink() -> NavigationLink<EmptyView, QuinielaView> {
+        let quinielaView = QuinielaView(viewModel: QuinielaViewModel(service: APIServiceImpl(environment: .develop)))
+        return NavigationLink(destination: quinielaView,
+                              isActive:$viewModel.isShowingQuinielaView) {
             EmptyView()
         }
     }
