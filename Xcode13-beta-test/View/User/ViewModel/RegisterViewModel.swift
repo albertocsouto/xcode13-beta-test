@@ -17,6 +17,8 @@ class RegisterViewModel: ObservableObject {
 
     let service: APIService
 
+    var registerTask: Task<(), Error>?
+
     required init(service: APIService) {
         self.service = service
     }

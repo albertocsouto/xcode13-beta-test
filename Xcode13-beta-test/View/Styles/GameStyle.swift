@@ -8,32 +8,55 @@
 import UIKit
 import SwiftUI
 
+let fontSize: CGFloat = 12
+let padding: CGFloat = 3
+
 struct MatchButtonStyle: ButtonStyle {
 
-    let font = Font.system(size: 12)
+    let font = Font.system(size: fontSize)
+    let marked: Bool
+
+    init(marked: Bool) {
+        self.marked = marked
+    }
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(3)
-            .background(Color.white)
-            .foregroundColor(.orange)
+            .padding(padding)
             .font(font)
-            .frame(width: 16)
-            .overlay(Rectangle().stroke(.orange, lineWidth: 1))
+            .frame(width: fontSize + padding)
+            .foregroundColor(marked ? .white : .orange)
+            .background(marked ? .orange : .white)
+            .overlay(
+                Rectangle()
+                    .strokeBorder(.orange, lineWidth: 1)
+            )
+            .scaleEffect(configuration.isPressed ? 0.6 : 1)
+            .animation(.easeInOut(duration: 0.2), value: 1)
     }
 }
 
 struct SpecialMatchButtonStyle: ButtonStyle {
 
-    let font = Font.system(size: 12)
+    let font = Font.system(size: fontSize)
+    let marked: Bool
+
+    init(marked: Bool) {
+        self.marked = marked
+    }
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(3)
-            .background(Color.white)
-            .foregroundColor(.blue)
+            .padding(padding)
             .font(font)
-            .frame(width: 16)
-            .overlay(Rectangle().stroke(.blue, lineWidth: 1))
+            .frame(width: fontSize + padding)
+            .foregroundColor(marked ? .white : .blue)
+            .background(marked ? .blue : .white)
+            .overlay(
+                Rectangle()
+                    .strokeBorder(.blue, lineWidth: 1)
+            )
+            .scaleEffect(configuration.isPressed ? 0.6 : 1)
+            .animation(.easeInOut(duration: 0.2), value: 1)
     }
 }

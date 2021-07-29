@@ -37,8 +37,8 @@ struct RegisterView: View {
                 Text(viewModel.result)
                     .padding()
                 Button("Register") {
-                    async {
-                        try? await viewModel.signUp()
+                    Task {
+                        try await viewModel.signUp()
                     }
                 }.padding()
                     .buttonStyle(BorderedButtonStyle())

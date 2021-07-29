@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SpecialMatchView: View {
-    @ObservedObject var viewModel: MatchViewModel
+    @ObservedObject var viewModel: SpecialMatchViewModel
 
-    init(viewModel: MatchViewModel) {
+    init(viewModel: SpecialMatchViewModel) {
         self.viewModel = viewModel
     }
 
@@ -30,20 +30,24 @@ struct SpecialMatchView: View {
                         .foregroundColor(.blue)
                         .font(font)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                }.frame(width: geometry.size.width * 0.7)
+                }.frame(width: geometry.size.width * 0.65)
                 HStack {
+                    Button("0", role: nil) {
+                        viewModel.is0Marked.toggle()
+                    }
+                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is0Marked))
                     Button("1", role: nil) {
-
+                        viewModel.is1Marked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle())
-                    Button("X", role: nil) {
-
-                    }
-                    .buttonStyle(SpecialMatchButtonStyle())
+                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is1Marked))
                     Button("2", role: nil) {
-
+                        viewModel.is2Marked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle())
+                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is2Marked))
+                    Button("M", role: nil) {
+                        viewModel.isMMarked.toggle()
+                    }
+                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.isMMarked))
                 }.frame(width: geometry.size.width * 0.3)
             }
         }
@@ -53,17 +57,6 @@ struct SpecialMatchView: View {
 
 struct SpecialMatchView_Previews: PreviewProvider {
     static var previews: some View {
-        SpecialMatchView(viewModel: MatchViewModel.mockViewModel())
-    }
-}
-
-private extension MatchViewModel {
-    static func mockViewModel() -> MatchViewModel {
-        let viewModel = MatchViewModel()
-        viewModel.team1 = "Barcelona"
-        viewModel.team2 = "Real Madrid"
-        viewModel.is1Marked = true
-        viewModel.isSpecial = true
-        return viewModel
+        SpecialMatchView(viewModel: SpecialMatchViewModel.mock())
     }
 }

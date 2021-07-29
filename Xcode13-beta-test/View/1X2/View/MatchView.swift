@@ -32,22 +32,22 @@ struct MatchView: View {
                         .foregroundColor(.orange)
                         .font(font)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                }.frame(width: geometry.size.width * 0.7)
+                }.frame(width: geometry.size.width * 0.65)
 
                 HStack {
                     Button("1", role: nil) {
-
+                        viewModel.is1Marked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle())
+                    .buttonStyle(MatchButtonStyle(marked: viewModel.is1Marked))
                     Button("X", role: nil) {
-
+                        viewModel.isXMarked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle())
+                    .buttonStyle(MatchButtonStyle(marked: viewModel.isXMarked))
                     Button("2", role: nil) {
-
+                        viewModel.is2Marked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle())
-                }.frame(width: geometry.size.width * 0.3)
+                    .buttonStyle(MatchButtonStyle(marked: viewModel.is2Marked))
+                }.frame(width: geometry.size.width * 0.35)
             }
         }
     }
@@ -56,18 +56,6 @@ struct MatchView: View {
 
 struct BetView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(viewModel: MatchViewModel.mockViewModel())
+        MatchView(viewModel: MatchViewModel.mock())
     }
 }
-
-private extension MatchViewModel {
-    static func mockViewModel() -> MatchViewModel {
-        let viewModel = MatchViewModel()
-        viewModel.team1 = "Barcelona"
-        viewModel.team2 = "Real Madrid"
-        viewModel.is1Marked = true
-        return viewModel
-    }
-}
-
-

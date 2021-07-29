@@ -23,7 +23,7 @@ class RegisterViewModelTests: XCTestCase {
         viewModel.password = "password"
         viewModel.name = "name"
         viewModel.lastname = "name"
-        let _ = try await viewModel.signUp()
+        try await viewModel.signUp()
         XCTAssert(viewModel.result == "OK!")
     }
 
@@ -31,7 +31,7 @@ class RegisterViewModelTests: XCTestCase {
         let viewModel = RegisterViewModel(service: APIServiceMock())
         viewModel.email = "test@test.com"
         viewModel.password = "password"
-        let _ = try await viewModel.signUp()
+        try await viewModel.signUp()
         XCTAssert(viewModel.result == "Failed!")
     }
 

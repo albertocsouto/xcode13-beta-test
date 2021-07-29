@@ -19,19 +19,22 @@ struct QuinielaView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(viewModel.betModels, id: \.self) { betModel in
-                        if betModel.isSpecial {
-                            SpecialMatchView(viewModel: betModel)
-                        } else {
-                            MatchView(viewModel: betModel)
-                        }
+                    ForEach(viewModel.matchViewModels, id: \.self) { viewModel in
+
+                        MatchView(viewModel: viewModel)
                     }
-                }
+                    ForEach(viewModel.specialMatchViewModels, id: \.self) { viewModel in
+
+                        SpecialMatchView(viewModel: viewModel)
+                    }
+                }.padding(.bottom, 35.0)
             }
         }
         .navigationTitle(viewModel.title)
         .onAppear() {
-            viewModel.getCurrentGame()
+            Task {
+                try await viewModel.getCurrentGame()
+            }
         }.onReceive(viewModel.$status) { status in
             print("Status!: \(status)")
         }
@@ -45,6 +48,6 @@ struct QuinielaView: View {
 
 struct QuinielaView_Previews: PreviewProvider {
     static var previews: some View {
-        QuinielaView(viewModel: QuinielaViewModel(service: APIServiceImpl(environment: .develop)))
+        QuinielaView(viewModel: QuinielaViewModel.mock())
     }
 }

@@ -21,8 +21,18 @@ class MatchViewModel: ObservableObject, Identifiable, Equatable, Hashable {
     var id = UUID()
     @Published var team1 = ""
     @Published var team2 = ""
-    @Published var isSpecial = false
     @Published var is1Marked = false
     @Published var isXMarked = false
     @Published var is2Marked = false
+    @Published var isMMarked = false
+}
+
+extension MatchViewModel {
+    static func mock() -> MatchViewModel {
+        let viewModel = MatchViewModel()
+        viewModel.team1 = "Barcelona"
+        viewModel.team2 = "Real Madrid"
+        viewModel.is1Marked = true
+        return viewModel
+    }
 }

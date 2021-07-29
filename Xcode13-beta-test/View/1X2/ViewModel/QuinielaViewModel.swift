@@ -18,7 +18,8 @@ class QuinielaViewModel: ObservableObject {
         case unknown
     }
 
-    @Published var betModels = [MatchViewModel]()
+    @Published var matchViewModels = [MatchViewModel]()
+    @Published var specialMatchViewModels = [SpecialMatchViewModel]()
     @Published var status = Status.unknown
 
     var title = "Quiniela"
@@ -36,39 +37,46 @@ class QuinielaViewModel: ObservableObject {
         loadGameTask?.cancel()
     }
 
-    func getCurrentGame() {
-        loadGameTask = Task(priority: .default) {
-            DispatchQueue.main.async {
-                self.status = .loading
+    func getCurrentGame() async throws {
+        self.status = .loading
+        do {
+            let result = try await service.game(season: 2020, match: 1)
+            switch result {
+            case .success(let quiniela):
+                for match in quiniela.matches where !match.isSpecial {
+                    let matchViewModel = MatchViewModel()
+                    matchViewModel.team1 = match.team1
+                    matchViewModel.team2 = match.team2
+                    matchViewModels.append(matchViewModel)
+                }
+                for match in quiniela.matches where match.isSpecial {
+                    let specialMatchViewModel = SpecialMatchViewModel()
+                    specialMatchViewModel.team1 = match.team1
+                    specialMatchViewModel.team2 = match.team2
+                    specialMatchViewModels.append(specialMatchViewModel)
+
+                }
+            case .failure(let error):
+                print(error)
             }
-            do {
-                let result = try await service.game(season: 2020, match: 1)
-                switch result {
-                case .success(let quiniela):
-                    for match in quiniela.matches {
-                        let MatchViewModel = MatchViewModel()
-                        MatchViewModel.team1 = match.team1
-                        MatchViewModel.team2 = match.team2
-                        MatchViewModel.isSpecial = match.isSpecial
-                        DispatchQueue.main.async {
-                            self.betModels.append(MatchViewModel)
-                        }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-                DispatchQueue.main.async {
-                    self.status = .loaded
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.status = .error
-                    self.showingError = true
-                }
-            }
+            status = .loaded
+        } catch {
+            self.status = .error
+            self.showingError = true
         }
-
     }
+}
 
+extension QuinielaViewModel {
+    static func mock() -> QuinielaViewModel {
+        let viewModel = QuinielaViewModel(service: APIServiceImpl(environment: .develop))
+        for _ in 1...14 {
+            viewModel.matchViewModels.append(MatchViewModel.mock())
+        }
+        for _ in 1...2 {
+            viewModel.specialMatchViewModels.append(SpecialMatchViewModel.mock())
+        }
+        return viewModel
+    }
 }
 

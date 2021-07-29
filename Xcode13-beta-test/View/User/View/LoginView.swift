@@ -31,11 +31,12 @@ struct LoginView: View {
                 Text(viewModel.result)
                     .padding()
                 Button("Login") {
-                    async {
-                        try? await viewModel.signIn()
+                    Task {
+                        try await viewModel.signIn()
                     }
-                }.padding()
-                    .buttonStyle(BorderedButtonStyle())
+                }
+                .padding()
+                .buttonStyle(BorderedButtonStyle())
             }
 
         }.navigationTitle("Login")

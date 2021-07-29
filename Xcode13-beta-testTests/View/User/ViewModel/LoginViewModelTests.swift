@@ -22,7 +22,7 @@ class LoginViewModelTests: XCTestCase {
         let viewModel = LoginViewModel(service: APIServiceMock())
         viewModel.email = "test@test.com"
         viewModel.password = "good password"
-        let _ = try await viewModel.signIn()
+        try await viewModel.signIn()
         XCTAssert(viewModel.result == "OK!")
     }
 
@@ -30,7 +30,7 @@ class LoginViewModelTests: XCTestCase {
         let viewModel = LoginViewModel(service: APIServiceMock())
         viewModel.email = "test@test.com"
         viewModel.password = "bad password"
-        let _ = try await viewModel.signIn()
+        try await viewModel.signIn()
         XCTAssert(viewModel.result == "Failed!")
     }
 

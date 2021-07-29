@@ -36,7 +36,7 @@ class APIServiceImpl: APIService {
 
     func signUp(data: SignUp) async throws -> HTTPURLResponse {
         let signUp = try JSONEncoder().encode(data)
-        return try await fetchPOST(path: "user/signUp", body: signUp)
+        return try await fetchPOST(path: "user/signup", body: signUp)
     }
 
     func signIn(data: SignIn) async throws -> HTTPURLResponse {
