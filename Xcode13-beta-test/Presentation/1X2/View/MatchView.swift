@@ -38,21 +38,20 @@ struct MatchView: View {
                     Button("1", role: nil) {
                         viewModel.is1Marked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle(marked: viewModel.is1Marked))
+                    .buttonStyle(MatchButtonStyle(matchType: .normal, marked: viewModel.is1Marked))
                     Button("X", role: nil) {
                         viewModel.isXMarked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle(marked: viewModel.isXMarked))
+                    .buttonStyle(MatchButtonStyle(matchType: .normal, marked: viewModel.isXMarked))
                     Button("2", role: nil) {
                         viewModel.is2Marked.toggle()
                     }
-                    .buttonStyle(MatchButtonStyle(marked: viewModel.is2Marked))
+                    .buttonStyle(MatchButtonStyle(matchType: .normal, marked: viewModel.is2Marked))
                 }.frame(width: geometry.size.width * 0.35)
             }
         }
     }
 }
-
 
 struct BetView_Previews: PreviewProvider {
     static var previews: some View {

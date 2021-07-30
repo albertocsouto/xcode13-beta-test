@@ -27,14 +27,8 @@ class QuinielaViewModel: ObservableObject {
 
     let service: APIService
 
-    var loadGameTask: Task<(), Error>?
-
     required init(service: APIService) {
         self.service = service
-    }
-
-    deinit {
-        loadGameTask?.cancel()
     }
 
     func getCurrentGame() async throws {
@@ -43,19 +37,7 @@ class QuinielaViewModel: ObservableObject {
             let result = try await service.game(season: 2020, match: 1)
             switch result {
             case .success(let quiniela):
-                for match in quiniela.matches where !match.isSpecial {
-                    let matchViewModel = MatchViewModel()
-                    matchViewModel.team1 = match.team1
-                    matchViewModel.team2 = match.team2
-                    matchViewModels.append(matchViewModel)
-                }
-                for match in quiniela.matches where match.isSpecial {
-                    let specialMatchViewModel = SpecialMatchViewModel()
-                    specialMatchViewModel.team1 = match.team1
-                    specialMatchViewModel.team2 = match.team2
-                    specialMatchViewModels.append(specialMatchViewModel)
-
-                }
+                buildMatches(from: quiniela)
             case .failure(let error):
                 print(error)
             }
@@ -63,6 +45,17 @@ class QuinielaViewModel: ObservableObject {
         } catch {
             self.status = .error
             self.showingError = true
+        }
+    }
+
+    private func buildMatches(from quiniela: Quiniela) {
+        for match in quiniela.matches where !match.isSpecial {
+            let matchViewModel = MatchViewModel.viewModel(from: match)
+            matchViewModels.append(matchViewModel)
+        }
+        for match in quiniela.matches where match.isSpecial {
+            let specialMatchViewModel = SpecialMatchViewModel.viewModel(from: match)
+            specialMatchViewModels.append(specialMatchViewModel)
         }
     }
 }

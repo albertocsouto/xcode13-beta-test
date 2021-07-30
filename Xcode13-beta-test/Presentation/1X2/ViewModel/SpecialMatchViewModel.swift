@@ -25,6 +25,13 @@ class SpecialMatchViewModel: ObservableObject, Identifiable, Equatable, Hashable
     @Published var is1Marked = false
     @Published var is2Marked = false
     @Published var isMMarked = false
+
+    static func viewModel(from match: Match) -> SpecialMatchViewModel {
+        let viewModel = SpecialMatchViewModel()
+        viewModel.team1 = match.team1
+        viewModel.team2 = match.team2
+        return viewModel
+    }
 }
 
 extension SpecialMatchViewModel {

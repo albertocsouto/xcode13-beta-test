@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296D240426AF6D9600570C1A /* DebugSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296D240326AF6D9600570C1A /* DebugSwiftUI.swift */; };
 		2974313A26A8E9D4001CE87A /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2974313926A8E9D4001CE87A /* MatchViewModel.swift */; };
 		2974313C26A8EA8C001CE87A /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2974313B26A8EA8C001CE87A /* MatchView.swift */; };
 		2974313E26A8F295001CE87A /* GameStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2974313D26A8F295001CE87A /* GameStyle.swift */; };
@@ -56,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		2907C3FC2690BAC700FF1FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		296D240326AF6D9600570C1A /* DebugSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSwiftUI.swift; sourceTree = "<group>"; };
 		2974313926A8E9D4001CE87A /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		2974313B26A8EA8C001CE87A /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		2974313D26A8F295001CE87A /* GameStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStyle.swift; sourceTree = "<group>"; };
@@ -114,16 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2907C3F826908B3900FF1FA0 /* View */ = {
+		2907C3F826908B3900FF1FA0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				296D240226AF6D8400570C1A /* Utills */,
 				2974313626A8E96D001CE87A /* 1X2 */,
-				29D8C5F42690754000B595BE /* Styles */,
 				29A0711C268F70AE00DC18BA /* User */,
 				29D8C5EF2690654600B595BE /* Welcome */,
 			);
-			path = View;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		2907C3F926908B4C00FF1FA0 /* API */ = {
@@ -135,17 +131,10 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		296D240226AF6D8400570C1A /* Utills */ = {
-			isa = PBXGroup;
-			children = (
-				296D240326AF6D9600570C1A /* DebugSwiftUI.swift */,
-			);
-			path = Utills;
-			sourceTree = "<group>";
-		};
 		2974313626A8E96D001CE87A /* 1X2 */ = {
 			isa = PBXGroup;
 			children = (
+				29EF5EB226B375FA008A5F7D /* Style */,
 				2974313826A8E9A2001CE87A /* ViewModel */,
 				2974313726A8E997001CE87A /* View */,
 			);
@@ -197,7 +186,7 @@
 			children = (
 				2907C3FC2690BAC700FF1FA0 /* Info.plist */,
 				2907C3F926908B4C00FF1FA0 /* API */,
-				2907C3F826908B3900FF1FA0 /* View */,
+				2907C3F826908B3900FF1FA0 /* Presentation */,
 				29827CE4268F2DB900E5AA1B /* Assets.xcassets */,
 				29827CE6268F2DB900E5AA1B /* Preview Content */,
 				29827CE0268F2DB800E5AA1B /* Xcode13_beta_testApp.swift */,
@@ -217,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				29F3B7382695166000A8C383 /* API */,
-				29F3B7302695118800A8C383 /* View */,
+				29F3B7302695118800A8C383 /* Presentation */,
 			);
 			path = "Xcode13-beta-testTests";
 			sourceTree = "<group>";
@@ -233,6 +222,7 @@
 		29A0711C268F70AE00DC18BA /* User */ = {
 			isa = PBXGroup;
 			children = (
+				29D8C5F42690754000B595BE /* Style */,
 				29A0711F268F736D00DC18BA /* View */,
 				29A07120268F737300DC18BA /* ViewModel */,
 			);
@@ -293,21 +283,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		29D8C5F42690754000B595BE /* Styles */ = {
+		29D8C5F42690754000B595BE /* Style */ = {
 			isa = PBXGroup;
 			children = (
 				29D8C5F5269076A100B595BE /* FormStyle.swift */,
-				2974313D26A8F295001CE87A /* GameStyle.swift */,
 			);
-			path = Styles;
+			path = Style;
 			sourceTree = "<group>";
 		};
-		29F3B7302695118800A8C383 /* View */ = {
+		29EF5EB226B375FA008A5F7D /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				2974313D26A8F295001CE87A /* GameStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		29F3B7302695118800A8C383 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				29F3B7372695164A00A8C383 /* User */,
 			);
-			path = View;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		29F3B7312695119500A8C383 /* ViewModel */ = {
@@ -492,7 +489,6 @@
 				29A0711E268F70DA00DC18BA /* RegisterView.swift in Sources */,
 				2974313C26A8EA8C001CE87A /* MatchView.swift in Sources */,
 				2974313A26A8E9D4001CE87A /* MatchViewModel.swift in Sources */,
-				296D240426AF6D9600570C1A /* DebugSwiftUI.swift in Sources */,
 				29F924C626910C84006ECE31 /* SignIn.swift in Sources */,
 				29CCCCF526B2084600D39FB3 /* SpecialMatchViewModel.swift in Sources */,
 				29F3B736269513A000A8C383 /* APIService.swift in Sources */,

@@ -12,5 +12,4 @@ protocol APIService {
     func signIn(data: SignIn) async throws -> HTTPURLResponse
     func signUp(data: SignUp) async throws -> HTTPURLResponse
     func game(season: Int, match: Int) async throws -> Result<Quiniela, Error>
-    
 }

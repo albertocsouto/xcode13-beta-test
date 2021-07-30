@@ -49,8 +49,6 @@ class APIServiceImpl: APIService {
         queryItems.append(URLQueryItem(name: "season", value: String(season)))
         queryItems.append(URLQueryItem(name: "game_number", value: String(match)))
         let (data, _) = try await fetchGET(path: "game/quiniela", queryItems: queryItems)
-        let stringData = String(data: data, encoding: .utf8)
-        print(stringData!)
         let result = Result { try JSONDecoder().decode(Quiniela.self, from: data) }
         return result
     }

@@ -35,25 +35,24 @@ struct SpecialMatchView: View {
                     Button("0", role: nil) {
                         viewModel.is0Marked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is0Marked))
+                    .buttonStyle(MatchButtonStyle(matchType: .special, marked: viewModel.is0Marked))
                     Button("1", role: nil) {
                         viewModel.is1Marked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is1Marked))
+                    .buttonStyle(MatchButtonStyle(matchType: .special, marked: viewModel.is1Marked))
                     Button("2", role: nil) {
                         viewModel.is2Marked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.is2Marked))
+                    .buttonStyle(MatchButtonStyle(matchType: .special, marked: viewModel.is2Marked))
                     Button("M", role: nil) {
                         viewModel.isMMarked.toggle()
                     }
-                    .buttonStyle(SpecialMatchButtonStyle(marked: viewModel.isMMarked))
+                    .buttonStyle(MatchButtonStyle(matchType: .special, marked: viewModel.isMMarked))
                 }.frame(width: geometry.size.width * 0.3)
             }
         }
     }
 }
-
 
 struct SpecialMatchView_Previews: PreviewProvider {
     static var previews: some View {
